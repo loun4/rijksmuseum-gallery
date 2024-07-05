@@ -1,0 +1,52 @@
+
+.Search {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  width: 550px;
+  font-size: 18px;
+
+  &__inputWrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+
+  &__inputClear {
+    position: absolute;
+    right: 4px;
+    color: var(--theme-color);
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  &__input {
+    padding: 8px;
+    width: 100%;
+    font-size: inherit;
+
+    &--hasValue {
+      padding-right: 32px;
+    }
+  }
+
+  &__submit {
+    width: 80px;
+    background: var(--theme-color);
+    color: var(--primary-color);
+    border: 1px solid var(--tertiary-color);
+    font-size: inherit;
+
+    &:hover {
+      transition: color ease .3s, background ease .6s;
+      background: var(--tertiary-color);
+      color: var(--theme-color);
+    }
+
+    &[disabled] {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+}

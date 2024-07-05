@@ -1,5 +1,8 @@
 
-.header {
+.Header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   position: fixed;
   top: 0;
   right: 0;

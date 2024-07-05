@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Search > render 1`] = `
+<DocumentFragment>
+  <form
+    class="Search"
+  >
+    <div
+      class="Search__inputWrapper"
+    >
+      <input
+        aria-label="Search"
+        class="Search__input"
+        placeholder="Search..."
+        type="text"
+        value=""
+      />
+    </div>
+    <input
+      class="Search__submit"
+      disabled=""
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</DocumentFragment>
+`;

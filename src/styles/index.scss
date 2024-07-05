@@ -1,9 +1,9 @@
 :root {
   // colors
-  --body-color: #242424;
+  --theme-color: #242424;
   --primary-color: #fff;
   --secondary-color: #969593;
-  --tertiary-color: ##f1f1f1;
+  --tertiary-color: #f1f1f1;
 
   // borders
   --border-color-light: #313131
@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	background-color: var(--body-color);
+	background-color: var(--theme-color);
 	color: var(--primary-color);
 }
 
@@ -20,4 +20,19 @@ body {
 *:before,
 *:after {
 	box-sizing: border-box;
+}
+
+input {
+  margin: 0;
+  border: 0;
+  border-radius: 4px;
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--border-color-light) 0px 5px 15px;
+  }
+
+  &[type='submit'] {
+    cursor: pointer;
+  }
 }
