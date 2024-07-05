@@ -1,0 +1,23 @@
+:root {
+  // colors
+  --body-color: #242424;
+  --primary-color: #fff;
+  --secondary-color: #969593;
+  --tertiary-color: ##f1f1f1;
+
+  // borders
+  --border-color-light: #313131
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	background-color: var(--body-color);
+	color: var(--primary-color);
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}

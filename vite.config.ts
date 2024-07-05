@@ -5,9 +5,7 @@ import * as path from 'path'
 
 export default defineConfig({
   test: {
-    setupFiles: [
-      './setupVitest.ts'
-    ]
+    setupFiles: ['./setupVitest.ts'],
   },
   resolve: {
     alias: {
