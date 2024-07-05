@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > render 1`] = `
+<DocumentFragment>
+  <header
+    class="Header"
+  >
+    <img
+      alt="RijksData"
+      height="32"
+      src="/src/assets/logo.png"
+      title="RijksData"
+      width="200"
+    />
+    <form
+      class="Search"
+    >
+      <div
+        class="Search__inputWrapper"
+      >
+        <input
+          aria-label="Search"
+          class="Search__input"
+          placeholder="Search..."
+          type="text"
+          value=""
+        />
+      </div>
+      <input
+        class="Search__submit"
+        disabled=""
+        type="submit"
+        value="Submit"
+      />
+    </form>
+  </header>
+</DocumentFragment>
+`;

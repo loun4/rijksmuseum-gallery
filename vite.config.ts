@@ -6,6 +6,7 @@ import * as path from 'path'
 export default defineConfig({
   test: {
     setupFiles: ['./setupVitest.ts'],
+    environment: 'happy-dom',
   },
   resolve: {
     alias: {
