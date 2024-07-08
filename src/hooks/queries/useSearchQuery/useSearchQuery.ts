@@ -26,6 +26,8 @@ export function useSearchQuery({ query }: UseSearchQueryArgs = {}) {
         ps: PAGE_SIZE,
         p: pageParam,
         imgonly: true,
+        place: 'Paris',
+        material: 'leather',
       })
     },
     getNextPageParam: (lastPage, allPages, lastPageParam) => {

@@ -1,0 +1,53 @@
+@import '@/styles/mixins.scss';
+
+.ArtObjects-spinner {
+  display: flex;
+  margin: 24px auto 0;
+}
+
+.ArtObjects {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1400px;
+
+  &__loader {
+    display: flex;
+    margin: auto;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tabletOrHigher {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include desktopOrHigher {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__load-more {
+    padding: 16px 12px;
+    margin: 12px auto;
+    font-size: 18px;
+    background: var(--border-color-light);
+    color: var(--tertiary-color);
+    border: 0;
+    border-radius: 8px;
+    min-width: 150px;
+    cursor: pointer;
+    transition: color ease-in .2s, background ease-in .3s;
+
+    &:hover,
+    &:focus {
+      background: var(--secondary-color);
+      color: var(--theme-color);
+    }
+  }
+}
