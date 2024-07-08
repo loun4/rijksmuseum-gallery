@@ -13,7 +13,10 @@ function getFlattenArtObjects(data: ArtObjects[]) {
 }
 
 function selectArtObjects({ pages }: InfiniteData<ArtObjects, number>) {
-  return getFlattenArtObjects(pages)
+  return {
+    count: pages[0].count,
+    items: getFlattenArtObjects(pages),
+  }
 }
 
 export function useSearchQuery({ query }: UseSearchQueryArgs = {}) {

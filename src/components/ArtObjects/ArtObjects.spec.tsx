@@ -20,6 +20,13 @@ describe('ArtObjects Component', () => {
     await waitFor(() => expect(getByLabelText('loading')).toBeInTheDocument())
   })
 
+  it('display title', async () => {
+    const { queryByLabelText, getByText } = renderWithRQ(<ArtObjects />)
+
+    await waitFor(() => expect(queryByLabelText('loading')).toBeNull())
+    expect(getByText('35 works in Paris')).toBeInTheDocument()
+  })
+
   it('display 20 items on initial render and load more button', async () => {
     const { asFragment, queryByLabelText, queryAllByAltText, queryAllByText, queryByText } = renderWithRQ(
       <ArtObjects />,

@@ -10,18 +10,19 @@ export function ArtObjects() {
     return <Spinner className='ArtObjects-spinner' color='var(--primary-color)' size='48px' />
   }
 
-  if (!data || data.length === 0) return <>No results</>
+  if (!data || data.items.length === 0) return <>No results</>
 
   return (
     <section className='ArtObjects'>
+      <h1 className='ArtObjects__title'>{data.count} works in Paris</h1>
+
       <ul className='ArtObjects__list'>
-        {data.map((item) => (
+        {data.items.map((item) => (
           <Card key={item.id} item={item}>
             {item.longTitle}
           </Card>
         ))}
       </ul>
-
       {hasNextPage && (
         <button
           type='button'

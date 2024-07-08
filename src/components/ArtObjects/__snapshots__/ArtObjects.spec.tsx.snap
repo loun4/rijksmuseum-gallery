@@ -5,6 +5,11 @@ exports[`ArtObjects Component > display 20 items on initial render and load more
   <section
     class="ArtObjects"
   >
+    <h1
+      class="ArtObjects__title"
+    >
+      35 works in Paris
+    </h1>
     <ul
       class="ArtObjects__list"
     >
@@ -424,6 +429,11 @@ exports[`ArtObjects Component > hide load more button when there is no more data
   <section
     class="ArtObjects"
   >
+    <h1
+      class="ArtObjects__title"
+    >
+      35 works in Paris
+    </h1>
     <ul
       class="ArtObjects__list"
     >

@@ -11,6 +11,12 @@
   margin: 0 auto;
   max-width: 1400px;
 
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    text-align: right;
+  }
+
   &__loader {
     display: flex;
     margin: auto;

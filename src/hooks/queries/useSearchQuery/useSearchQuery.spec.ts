@@ -30,7 +30,7 @@ describe('useSearchQuery', () => {
     async function waitForPagination(hasNextPage: boolean, expectedPagesSize: number) {
       await waitFor(() => expect(result.current.isFetching).toEqual(false))
       await waitFor(() => expect(hasNextPage).toEqual(hasNextPage))
-      await waitFor(() => expect(result.current.data?.length).toEqual(expectedPagesSize))
+      await waitFor(() => expect(result.current.data?.items.length).toEqual(expectedPagesSize))
     }
 
     // trigger first pagination
