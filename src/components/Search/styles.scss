@@ -1,16 +1,27 @@
+@import '@/styles/mixins.scss';
 
 .Search {
   display: flex;
+  flex: 1;
   gap: 8px;
   margin-left: auto;
-  width: 550px;
   font-size: 18px;
+  width: 100%;
+
+  @include tabletOrHigher {
+    width: auto;
+  }
 
   &__inputWrapper {
+    margin-left: auto;
     position: relative;
     display: flex;
     flex: 1;
     align-items: center;
+
+    @include tabletOrHigher {
+      max-width: 450px;
+    }
   }
 
   &__inputClear {
