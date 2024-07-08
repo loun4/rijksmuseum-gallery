@@ -1,0 +1,10 @@
+// https://github.com/n3r4zzurr0/svg-spinners?tab=readme-ov-file
+
+.Spinner {
+  transform-origin: center;
+  animation: spinner .75s infinite linear
+}
+
+@keyframes spinner{
+  100% { transform:rotate(360deg) }
+}
