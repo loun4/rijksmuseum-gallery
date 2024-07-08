@@ -2,24 +2,31 @@ import './styles.scss'
 import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import classNames from 'classnames'
-import { useURLSearchParams } from '@/hooks/useURLSearchParams'
+import { useURLSearchParamsContext } from '@/hooks/useURLSearchParams'
 
 export function Search() {
-  const [searchParams, setSearchParams] = useURLSearchParams()
-  const [name, setName] = useState(searchParams.get('q') || '')
+  const { searchParams, updateSearchParams } = useURLSearchParamsContext()
 
-  function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setName(e.target.value)
-  }
+  const [name, setName] = useState(searchParams.get('q') || '')
 
   function handleClear() {
     setName('')
-    setSearchParams({ q: undefined })
+    updateSearchParams({ q: undefined })
+  }
+
+  function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { value } = e.target
+
+    if (value === '') {
+      handleClear()
+    } else {
+      setName(value)
+    }
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSearchParams({ q: name })
+    updateSearchParams({ q: name })
   }
 
   return (
@@ -32,7 +39,7 @@ export function Search() {
           })}
           value={name}
           onChange={handleNameChange}
-          placeholder='Search...'
+          placeholder='Search by title...'
           aria-label='Search'
         />
         {name.length > 0 && (

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Search > render 1`] = `
+exports[`Search > render correctly 1`] = `
 <DocumentFragment>
   <form
     class="Search"
@@ -11,7 +11,7 @@ exports[`Search > render 1`] = `
       <input
         aria-label="Search"
         class="Search__input"
-        placeholder="Search..."
+        placeholder="Search by title..."
         type="text"
         value=""
       />

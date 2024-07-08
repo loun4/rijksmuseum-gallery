@@ -2,15 +2,22 @@ import { useSearchQuery } from '@/hooks/queries/useSearchQuery'
 import { Card } from './Card'
 import './styles.scss'
 import { Spinner } from '@/components/Spinner'
+import { useURLSearchParamsContext } from '@/hooks/useURLSearchParams'
 
 export function ArtObjects() {
-  const { data, status, fetchNextPage, hasNextPage, isFetchingNextPage } = useSearchQuery()
+  const { searchParams } = useURLSearchParamsContext()
+  const { data, status, isError, fetchNextPage, hasNextPage, isFetchingNextPage } = useSearchQuery({
+    query: {
+      q: searchParams.get('q') ?? undefined,
+    },
+  })
 
   if (status === 'pending') {
     return <Spinner className='ArtObjects-spinner' color='var(--primary-color)' size='48px' />
   }
 
   if (!data || data.items.length === 0) return <>No results</>
+  if (isError) return <>Something went wrong</>
 
   return (
     <section className='ArtObjects'>

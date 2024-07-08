@@ -21,7 +21,7 @@ exports[`Header > render 1`] = `
         <input
           aria-label="Search"
           class="Search__input"
-          placeholder="Search..."
+          placeholder="Search by title..."
           type="text"
           value=""
         />

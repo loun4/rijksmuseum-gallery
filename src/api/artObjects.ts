@@ -13,6 +13,6 @@ export type ArtObjects = {
   artObjects: ArtObject[]
 }
 
-export async function getArtObjects(query?: Query) {
-  return await get<ArtObjects>('/collection', query)
+export function getArtObjects(query?: Query) {
+  return get<ArtObjects>('/collection', query)
 }
