@@ -1,6 +1,10 @@
+@import '@/styles/mixins.scss';
 
 .Header {
   display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background: var(--theme-color);
   align-items: center;
   gap: 12px;
   position: fixed;
@@ -9,4 +13,8 @@
   left: 0;
   border-bottom: 1px solid var(--border-color-light);
   padding: 24px;
+
+  @include tabletOrHigher {
+    flex-direction: row;
+  }
 }
