@@ -1,0 +1,50 @@
+.Card {
+  aspect-ratio: 1/1;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color-light);
+  border-radius: 8px;
+
+  &:hover,
+  &:focus {
+    .Card__title {
+      bottom: 0
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    z-index: 1;
+    background: var(--secondary-color-50);
+    text-align: left;
+    padding: 12px;
+    transition: ease-in-out bottom .5s;
+
+    span {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    object-position: 50% 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    &--isLoaded {
+      transition: opacity 1s ease-out;
+      opacity: 1;
+    }
+  }
+}
