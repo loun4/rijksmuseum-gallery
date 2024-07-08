@@ -1,12 +1,18 @@
+@import '@/styles/mixins.scss';
+
 :root {
   // colors
-  --theme-color: #242424;
-  --primary-color: #fff;
-  --secondary-color: #969593;
-  --tertiary-color: #f1f1f1;
+  --theme-color: rgb(36, 36, 36);
+
+  --primary-color: rgb(255, 255, 255);
+
+  --secondary-color: rgb(150, 149, 147);
+  --secondary-color-50: rgba(150, 149, 147, .5);
+
+  --tertiary-color: rgb(241, 241, 241);
 
   // borders
-  --border-color-light: #313131
+  --border-color-light: rgb(49, 49, 49);
 }
 
 body {
@@ -34,5 +40,13 @@ input {
 
   &[type='submit'] {
     cursor: pointer;
+  }
+}
+
+.layout {
+  padding: 150px 28px;
+
+  @include tabletOrHigher {
+    padding: 120px 28px;
   }
 }
