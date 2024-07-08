@@ -1,9 +1,11 @@
 import { cleanup, fireEvent, render } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Search } from './index'
 import { mockLocationHref } from '@/test-utils'
 
 describe('Search', () => {
+  afterEach(cleanup)
+
   it('render', () => {
     const { asFragment } = render(<Search />)
     expect(asFragment()).toMatchSnapshot()
@@ -15,7 +17,6 @@ describe('Search', () => {
 
     expect(getByDisplayValue('Portrait')).toBeInTheDocument()
     expect(getByLabelText('Clear search')).toBeInTheDocument()
-    cleanup()
   })
 
   it('disable submit button and clear text icon if the input is empty', async () => {
@@ -24,7 +25,6 @@ describe('Search', () => {
 
     expect(getByText(/Submit/i)).toHaveAttribute('disabled')
     expect(queryByLabelText('Clear search')).toBeNull()
-    cleanup()
   })
 
   it('update url search params on submit', async () => {

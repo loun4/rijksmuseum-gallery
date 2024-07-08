@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { describe, expect, it, beforeEach } from 'vitest'
 import { useSearchQuery } from '.'
-import { QueryProvider } from '@/test-utils'
+import { QueryProvider, data } from '@/test-utils'
 
 describe('useSearchQuery', () => {
   beforeEach(() => {
@@ -14,22 +14,11 @@ describe('useSearchQuery', () => {
     })
 
     expect(fetchMock).toHaveBeenCalledWith(
-      'https://www.rijksmuseum.nl/api/en/collection?key=123&ps=20&p=1&imgonly=true',
+      'https://www.rijksmuseum.nl/api/en/collection?key=123&ps=20&p=1&imgonly=true&place=Paris&material=leather',
     )
   })
 
   it('should paginate and stop when all items are loaded', async () => {
-    const data = [
-      {
-        count: 35,
-        artObjects: Array.from({ length: 20 }, (_, index) => ({ id: index })),
-      },
-      {
-        count: 35,
-        artObjects: Array.from({ length: 15 }, (_, index) => ({ id: index + 20 })),
-      },
-    ]
-
     data.forEach((response) => {
       fetchMock.mockResponseOnce(JSON.stringify(response))
     })
