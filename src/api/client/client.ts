@@ -2,14 +2,28 @@ const baseURL = `${import.meta.env.VITE_API_BASE_URL}`
 
 export type Query = {
   q?: string
-  p?: string
-  ps?: string
+  p?: number
+  ps?: number
+  imgonly?: boolean
+  place?: string
+  material?: string
+}
+
+function stringifyQuery(query?: Query) {
+  if (!query) return
+  return Object.entries(query).reduce((acc, [key, value]) => {
+    if (typeof value === 'undefined') return acc
+    return {
+      ...acc,
+      [key]: String(value),
+    }
+  }, {})
 }
 
 function getURL(endpoint: string, query?: Query) {
   const search = new URLSearchParams({
     key: import.meta.env.VITE_API_KEY,
-    ...query,
+    ...stringifyQuery(query),
   })
 
   return `${baseURL}${endpoint}?${search.toString()}`

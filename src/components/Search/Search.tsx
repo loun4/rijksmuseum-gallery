@@ -2,10 +2,10 @@ import './styles.scss'
 import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import classNames from 'classnames'
-import { useSearchParams } from '@/hooks/useSearchParams'
+import { useURLSearchParams } from '@/hooks/useURLSearchParams'
 
 export function Search() {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useURLSearchParams()
   const [name, setName] = useState(searchParams.get('q') || '')
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {

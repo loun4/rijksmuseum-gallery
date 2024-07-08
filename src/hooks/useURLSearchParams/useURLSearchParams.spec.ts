@@ -1,14 +1,14 @@
 import { act, renderHook } from '@testing-library/react'
 import { expect, it, vi } from 'vitest'
-import { useSearchParams } from '.'
+import { useURLSearchParams } from './useURLSearchParams'
 import { describe } from 'node:test'
 import { mockLocationHref } from '@/test-utils'
 
 mockLocationHref('https://domain.com?name=test')
 
-describe('useSearchParams', () => {
+describe('useURLSearchParams', () => {
   it('init with current URL search params', () => {
-    const { result } = renderHook(() => useSearchParams())
+    const { result } = renderHook(() => useURLSearchParams())
     const [searchParams] = result.current
 
     expect(searchParams.get('name')).toEqual('test')
@@ -16,7 +16,7 @@ describe('useSearchParams', () => {
 
   it('update search params', async () => {
     const replaceStateSpy = vi.spyOn(window.history, 'replaceState')
-    const { result } = renderHook(() => useSearchParams())
+    const { result } = renderHook(() => useURLSearchParams())
     const [, handleSearchParamsChange] = result.current
 
     act(() => {

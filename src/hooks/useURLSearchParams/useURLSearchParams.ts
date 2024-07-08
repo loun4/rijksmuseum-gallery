@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 
 type HandleSearchParamsChange = (query: Record<string, string | undefined>) => void
 
-export function useSearchParams(): [URLSearchParams, HandleSearchParamsChange] {
+export function useURLSearchParams(): [URLSearchParams, HandleSearchParamsChange] {
   const [searchParams, setSearchParams] = useState(() => {
     const { searchParams } = new URL(window.location.href)
     return searchParams
