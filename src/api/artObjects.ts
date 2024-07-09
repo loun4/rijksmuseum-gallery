@@ -2,6 +2,7 @@ import { get, Query } from './client'
 
 export type ArtObject = {
   longTitle: string
+  title: string
   id: string
   webImage: {
     url: string

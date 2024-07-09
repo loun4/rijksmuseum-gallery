@@ -34,7 +34,7 @@ describe('ArtObjects Component', () => {
 
     await waitFor(() => expect(queryByLabelText('loading')).toBeNull())
 
-    expect(queryAllByAltText(/^longTitle-/)).toHaveLength(20) // Images
+    expect(queryAllByAltText(/^title-/)).toHaveLength(20) // Images
     expect(queryAllByText(/^longTitle-/)).toHaveLength(20) // Titles
     expect(queryByText(/Load more/)).toBeInTheDocument() // Load more button
     expect(asFragment()).toMatchSnapshot()

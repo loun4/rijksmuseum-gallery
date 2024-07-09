@@ -19,7 +19,7 @@ export function Card({ item }: Props) {
     <li className='Card' tabIndex={0}>
       <figure>
         <img
-          alt={item.longTitle}
+          alt={item.title}
           className={classNames('Card__image', {
             'Card__image--isLoaded': isLoaded,
           })}
