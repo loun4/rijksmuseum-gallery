@@ -6,7 +6,6 @@ import { useURLSearchParamsContext } from '@/hooks/useURLSearchParams'
 
 export function Search() {
   const { searchParams, updateSearchParams } = useURLSearchParamsContext()
-
   const [name, setName] = useState(searchParams.get('q') || '')
 
   function handleClear() {

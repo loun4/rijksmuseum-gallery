@@ -2,10 +2,6 @@ import { getArtObjects, ArtObjects } from '@/api/artObjects'
 import { Query } from '@/api/client'
 import { InfiniteData, useInfiniteQuery } from '@tanstack/react-query'
 
-type UseSearchQueryArgs = {
-  query?: Query
-}
-
 const PAGE_SIZE = 20
 const STALE_TIME = 1000 * 60 * 5 // 5 minutes
 
@@ -20,7 +16,7 @@ function selectArtObjects({ pages }: InfiniteData<ArtObjects, number>) {
   }
 }
 
-export function useSearchQuery({ query }: UseSearchQueryArgs = {}) {
+export function useSearchQuery(query: Query = {}) {
   return useInfiniteQuery({
     staleTime: STALE_TIME,
     initialPageParam: 1,

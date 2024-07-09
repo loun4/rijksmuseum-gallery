@@ -8,7 +8,7 @@ export function useURLSearchParams() {
     return searchParams
   })
 
-  const handleSearchParamsChange = useCallback<HandleSearchParamsChange>((query) => {
+  const updateSearchParams = useCallback<HandleSearchParamsChange>((query) => {
     const url = new URL(window.location.href)
 
     Object.entries(query).forEach(([key, value]) => {
@@ -23,5 +23,5 @@ export function useURLSearchParams() {
     window.history.replaceState({}, '', url.toString())
   }, [])
 
-  return { searchParams, updateSearchParams: handleSearchParamsChange }
+  return { searchParams, updateSearchParams }
 }

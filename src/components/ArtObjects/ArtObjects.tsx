@@ -7,9 +7,7 @@ import { useURLSearchParamsContext } from '@/hooks/useURLSearchParams'
 export function ArtObjects() {
   const { searchParams } = useURLSearchParamsContext()
   const { data, status, isError, fetchNextPage, hasNextPage, isFetchingNextPage } = useSearchQuery({
-    query: {
-      q: searchParams.get('q') ?? undefined,
-    },
+    q: searchParams.get('q') ?? undefined,
   })
 
   if (status === 'pending') {
