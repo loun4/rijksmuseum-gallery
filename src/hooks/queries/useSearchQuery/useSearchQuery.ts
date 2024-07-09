@@ -7,6 +7,7 @@ type UseSearchQueryArgs = {
 }
 
 const PAGE_SIZE = 20
+const STALE_TIME = 1000 * 60 * 5 // 5 minutes
 
 function getFlattenArtObjects(data: ArtObjects[]) {
   return data.flatMap(({ artObjects }) => artObjects)
@@ -21,6 +22,7 @@ function selectArtObjects({ pages }: InfiniteData<ArtObjects, number>) {
 
 export function useSearchQuery({ query }: UseSearchQueryArgs = {}) {
   return useInfiniteQuery({
+    staleTime: STALE_TIME,
     initialPageParam: 1,
     queryKey: ['search', query],
     queryFn: ({ pageParam }) => {
