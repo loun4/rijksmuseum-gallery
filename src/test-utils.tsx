@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render, RenderOptions } from '@testing-library/react'
-import { URLSearchParamsProvider } from './hooks/useURLSearchParams'
 
 export function mockLocationHref(url = 'https://domain.com') {
   Object.defineProperty(window, 'location', {
@@ -29,11 +28,7 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
 
 export function renderWithProviders(ui: React.ReactNode, renderOptions?: RenderOptions) {
   function Wrapper({ children }: { children: React.ReactNode }) {
-    return (
-      <QueryProvider>
-        <URLSearchParamsProvider>{children}</URLSearchParamsProvider>
-      </QueryProvider>
-    )
+    return <QueryProvider>{children}</QueryProvider>
   }
 
   return render(ui, { wrapper: Wrapper, ...renderOptions })

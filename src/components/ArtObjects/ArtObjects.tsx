@@ -2,10 +2,11 @@ import { useSearchQuery } from '@/hooks/queries/useSearchQuery'
 import { Card } from './Card'
 import './styles.scss'
 import { Spinner } from '@/components/Spinner'
-import { useURLSearchParamsContext } from '@/hooks/useURLSearchParams'
+import { useURLSearchParams } from '@/hooks/useURLSearchParams'
 
 export function ArtObjects() {
-  const { searchParams } = useURLSearchParamsContext()
+  const { searchParams } = useURLSearchParams()
+
   const { data, status, isError, fetchNextPage, hasNextPage, isFetchingNextPage } = useSearchQuery({
     q: searchParams.get('q') ?? undefined,
   })

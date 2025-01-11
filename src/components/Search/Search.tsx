@@ -2,10 +2,10 @@ import './styles.scss'
 import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import classNames from 'classnames'
-import { useURLSearchParamsContext } from '@/hooks/useURLSearchParams'
+import { useURLSearchParams } from '@/hooks/useURLSearchParams'
 
 export function Search() {
-  const { searchParams, updateSearchParams } = useURLSearchParamsContext()
+  const { searchParams, updateSearchParams } = useURLSearchParams()
   const [name, setName] = useState(searchParams.get('q') || '')
 
   function handleClear() {
